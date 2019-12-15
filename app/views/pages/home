@@ -1,5 +1,0 @@
-<% @post.each do |x| %>
-
-	<%= x.content %>
-
-<% end >

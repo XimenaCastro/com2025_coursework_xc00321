@@ -1,6 +1,5 @@
 class CountriesController < ApplicationController
-	def country
-
+	def show
 		
 	end
 end

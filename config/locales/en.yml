@@ -31,7 +31,8 @@
 
 en:
   hello: "Hello world"
-
+  page_title: "Travel With Us"
+  #Variables used for contacts
   contacts:
     title: Contact us
     contact_us: Complete the following form to get in touch with us.
@@ -46,11 +47,13 @@ en:
     enter_message: What do you want to say?
     submit: Submit
 
+  #Variables used for request contacts
   request_contacts:
     no_email: You must provide an email address
     email_sent: Thank you. We will be in touch with you shortly
 
+  #Variables used for countries
   countries:
-    
 
+  #Variables used for activities
   activities:

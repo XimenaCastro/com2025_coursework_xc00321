@@ -8,21 +8,22 @@ class ContactsController < ApplicationController
 		@contact = Contact.new
 	end
 
-	def create
+	def create 
 		@contact = Contact.new(params[:contact])
 		@contact.request =request
 	end
 
-	def request_contact
+	def request_contacts
 		name = params[:name]
 		email = params[:email]
 		telephone = params[:telephone]
 		message = params[:message]
 		if email.blank?
-		flash[:alert] = I18n.t('pages.request_contacts.no_email')
-		else
+		flash[:alert] = I18n.t('request_contacts.no_email')
+		else 
+			ContactMailer.contact_email(email, name, telephone, message).deliver_now
 		# Send an email
-		flash[:notice] = I18n.t('pages.request_contacts.email_sent')
+		flash[:notice] = I18n.t('request_contacts.email_sent')
 		end
 		redirect_to root_path
 

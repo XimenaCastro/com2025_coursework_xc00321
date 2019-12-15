@@ -10,7 +10,22 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <% if notice %>
+  <p class="alert alert-success">
+    <%= notice %>
+  </p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger">
+    <%= alert %>
+  </p>
+<% end %>
+
+
   <body>
+    <%= render 'layouts/header'%>
+    <section class="section" style="background-color: black;">
     <%= yield %>
+    </section>
   </body>
 </html>
