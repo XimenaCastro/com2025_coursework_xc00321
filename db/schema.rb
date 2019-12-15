@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_13_001138) do
+ActiveRecord::Schema.define(version: 2019_12_15_191013) do
 
   create_table "activities", force: :cascade do |t|
     t.string "name"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2019_12_13_001138) do
     t.text "link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "activity_id"
   end
 
   create_table "posts", force: :cascade do |t|

@@ -1,3 +1,4 @@
 class Activity < ApplicationRecord
-	has_many :countries
+	#An activity can have many countries
+	belongs_to :countries
 end

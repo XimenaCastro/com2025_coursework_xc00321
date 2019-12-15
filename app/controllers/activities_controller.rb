@@ -1,5 +1,6 @@
 class ActivitiesController < ApplicationController
-
+before_action :find_activity, only: [:show, :destroy]
+#before_action :set_activity, only: [:create]
 	#method to show all the activities
 	def index
 		@activities = Activity.all.order("created_at DESC")
@@ -16,7 +17,7 @@ class ActivitiesController < ApplicationController
 
     #if the activity has been saved redirects to index of activities
 		if @activity.save
-			redirect_to activities_path
+			redirect_to @activity
 		else
 			render 'new'
 		end
@@ -46,4 +47,6 @@ class ActivitiesController < ApplicationController
 	def find_activity
 	 	@activity = Activity.find(params[:id])
 	end
+
+
 end

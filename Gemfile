@@ -83,3 +83,6 @@ gem 'simple_form', '~> 5.0', '>= 5.0.1'
 
 #Extracting `assigns` and `assert_template` from ActionDispatch.
 gem 'rails-controller-testing', '~> 1.0', '>= 1.0.4'
+
+#Flexible authentication solution for Rails with Warden
+gem 'devise', '~> 4.7', '>= 4.7.1'

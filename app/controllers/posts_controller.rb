@@ -27,6 +27,10 @@ class PostsController < ApplicationController
 	#Show method
 	def show
 	end
+	#Method to linkk to the about page
+
+	#def about
+	#end
 
 	#Method to update the post
 	def update
