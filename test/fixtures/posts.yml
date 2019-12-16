@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: "Vacations in Iceland"
+  title: Vacations in Iceland
   content: Iceland
 
 two:

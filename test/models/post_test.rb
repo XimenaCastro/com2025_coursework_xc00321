@@ -1,33 +1,32 @@
 require 'test_helper'
 
 class PostTest < ActiveSupport::TestCase
-  # test "the truth" do  test "Should not create empty activity" do
-      	activity = Activity.new
-        activity.save
-        refute activity.valid?
+  # test "the truth" do
+  test "Should not create empty post" do
+     	  post = Post.new
+        post.save
+        refute post.valid?
     end
     #   assert true
-    test "Activities should have name and description" do
-        #activity = Activity.new(name: 'Hike', description: 'We went hiking in Iceland').save
-        activity = Activity.new
-        #assert_includes Activity.new(name: 'Hike', description: 'We went hiking in Iceland').save
+    test "Posts should have name and description" do
 
-        activity.name= 'Hike'
-        activity.description= 'Went hiking in Iceland'
+        post = Post.new
 
-        activity.save
-        assert @activity.valid?
+        post.title= 'Hike'
+        post.content= 'Went hiking in Iceland'
+
+        post.save
+        assert post.valid?
       end
 
   # assert not true
     test "Should not save activities with no name" do
-        assert_not  Activity.new(description: 'We went hiking in Iceland').save
+        assert_not  Post.new(content: 'We went hiking in Iceland').save
       end
 
     test "Should not save activities with no description" do
-        assert_not Activity.new(name: 'Hike').save
+        assert_not Post.new(title: 'Hike').save
     end
-        # end
-  #   assert true
+
   # end
 end

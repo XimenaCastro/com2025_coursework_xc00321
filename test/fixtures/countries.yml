@@ -2,10 +2,10 @@
 
 one:
   name: Iceland
-  description: Country
-  link: Activities
+  description: Country1
+  link: Activities1
 
 two:
   name: Peru
-  description: Country
-  link: Activities
+  description: Country2
+  link: Activities2

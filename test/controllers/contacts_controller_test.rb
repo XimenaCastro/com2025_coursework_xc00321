@@ -1,32 +1,36 @@
 require 'test_helper'
 
 class ContactsControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
+  # test to get the contacts
   test "should get contact" do
-  	get contact_url
+  	get contacts_url
 
   #   assert true
   assert_response :success
   assert_template layout: 'application'
-  #assert_select'title', 'My Notes'assert_select'h1', 'Contact Us'
-  #assert_select'p', 'Complete the following form to get in touch with us
 
-  # end
 	end
 
+#Test user input the email in contact form
   test "should post request contact but not email" do
-    post request_contact_url
+    post request_contacts_url
     assert_response :redirect
+    #assert not empty
     assert_not_empty flash[:alert]
-    assert_nil flash[:notice]#
+    #assert not true
+    assert_nil flash[:notice]
   end
 
+#Test to request form
   test "should post request contact" do
-    post request_contact_url, params:
+    post request_contacts_url, params:
       {name: "Ximena", email: "xim@me.com", telephone: "03042001", message: "hey"}
 
       assert_response :redirect
+
+      #assert not true
       assert_nil flash[:alert]
+      #assert not empty
       assert_not_empty flash[:notice]
     end
 end

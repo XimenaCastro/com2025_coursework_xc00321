@@ -18,7 +18,7 @@ class PostsController < ApplicationController
 
 		#if the post has been saved redirects to index of posts
 		if @post.save
-			redirect_to @post
+			redirect_to root_path
 		else
 			render 'new'
 		end

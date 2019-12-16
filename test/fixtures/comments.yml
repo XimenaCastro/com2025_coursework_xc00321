@@ -3,7 +3,7 @@
 one:
   name: One
   comment: Comment1
-
+  post: one
 two:
   name: MyString
   comment: Comment2

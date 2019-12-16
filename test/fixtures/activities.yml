@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString1
-  description:
+  name: hiking
+  description: hiking in Iceland
 
 two:
-  name: MyString2
-  description:
+  name: Cycling
+  description: Cycling in Rome was awesome
