@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: 
-  description: 
-  link: 
+  name: Iceland
+  description: Country
+  link: Activities
 
 two:
-  name: 
-  description: 
-  link: 
+  name: Peru
+  description: Country
+  link: Activities

@@ -13,11 +13,12 @@ before_action :find_activity, only: [:show, :destroy]
 
   #method for create a new activity
 	def create
+		puts activity_params
 		@activity = Activity.new(activity_params)
 
     #if the activity has been saved redirects to index of activities
 		if @activity.save
-			redirect_to @activity
+			redirect_to activities_path
 		else
 			render 'new'
 		end

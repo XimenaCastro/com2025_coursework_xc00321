@@ -1,5 +1,5 @@
 class CountriesController < ApplicationController
-before_action :find_country, only: [:show, :destroy]
+	before_action :find_country, only: [:show, :destroy]
 	#Method for show all countries
 	def index
 				@countries = Country.all.order("created_at DESC")
@@ -16,7 +16,7 @@ before_action :find_country, only: [:show, :destroy]
 
 			#if the country has been saved successfully redirects to index of countries
 			if @country.save
-				redirect_to @country
+				redirect_to countries_path
 			else
 				render 'new'
 			end
@@ -29,7 +29,7 @@ before_action :find_country, only: [:show, :destroy]
 	def destroy
 		@country.destroy
 		#After deleting post redirect the user to countries index
-		redirect_to @country
+		redirect_to countries_path
 
 	end
 
@@ -38,4 +38,9 @@ before_action :find_country, only: [:show, :destroy]
 	def country_params
 		params.require(:country).permit(:name, :description, :link)
 	end
+
+	def find_country
+		@country = Country.find(params[:id])
+	end
+
 end

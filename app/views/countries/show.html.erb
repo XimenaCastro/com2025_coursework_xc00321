@@ -13,7 +13,7 @@
 		  <div class="level-right">
 
 		  	<p class="level-item">
-				<%= link_to "Delete", countries_path(@country), method: :delete, data: { confirm: "Are you sure?" }, class:"button is-danger" %>
+				<%= link_to "Delete", country_path(@country), method: :delete, data: { confirm: "Are you sure?" }, class:"button is-danger" %>
 				</p>
 		  </div>
 		</nav>
@@ -22,7 +22,7 @@
 		<div class="content">
 			<%= @country.description %>
       <a class="button is-link is-outlined ">
-        <%= country.link %>
+        <%= @country.link %>
       </a>
 		</div>
 
