@@ -9,18 +9,29 @@ class ActivityTest < ActiveSupport::TestCase
   end
   #   assert true
   test "Activities should have name and description" do
-        activity = Activity.new(name: 'Xim', description: 'Your trip sounds awesome')
-        country = Country.new(name: 'Hi', description: 'Bye', link: 'Link to activities')
-        country.activity = country
-        assert activity.save
-      end
+    country = Country.new(name: 'Hi', description: 'Bye', link: 'Link to activities')
+    country.save
+    activity = Activity.new(name: 'Xim', description: 'Your trip sounds awesome')
+    activity.save
+    activity = Activity.new(name: 'Xim', description: 'Your trip sounds awesome')
+    assert activity.save
+  end
 # assert not true
   test "Should not save activities with no name" do
-      assert_not  Activity.new(description: 'We went hiking in Iceland').save
-    end
-
-  test "Should not save activities with no description" do
-      assert_not Activity.new(name: 'Hike').save
+    country = Country.new(name: 'Hi', description: 'Bye', link: 'Link to activities')
+    country.save
+    activity = Activity.new(name: 'Xim', description: 'Your trip sounds awesome')
+    activity.save
+    activity = Activity.new(name: '', description: 'Your trip sounds awesome')
+    refute activity.valid?
   end
-      # end
+
+  test "Should not save with no description" do
+    country = Country.new(name: 'Hi', description: 'Bye', link: 'Link to activities')
+    country.save
+    activity = Activity.new(name: 'Xim', description: 'content')
+    activity.save
+    activity = Activity.new(name: 'Xim', description: '')
+    refute activity.valid?
+  end
 end

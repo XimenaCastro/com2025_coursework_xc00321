@@ -9,10 +9,7 @@ class CountryTest < ActiveSupport::TestCase
   end
   #   assert true
   test "Countries should have name, description and a link" do
-      #activity = Activity.new(name: 'Hike', description: 'We went hiking in Iceland').save
       country = Country.new
-      #assert_includes Activity.new(name: 'Hike', description: 'We went hiking in Iceland').save
-
       country.name= 'Iceland'
       country.description= 'Beautiful Country'
       country.link= 'Learn More about Iceland'
@@ -23,16 +20,32 @@ class CountryTest < ActiveSupport::TestCase
 
 # assert not true
   test "Should not save countries with no name" do
-      assert_not Country.new(description: 'Your trip sounds awesome').save
-    end
+    country = Country.new
+    country.name= ''
+    country.description= 'Beautiful Country'
+    country.link= 'Learn More about Iceland'
+
+    country.save
+    refute country.valid?
+  end
 
   test "Should not save countries with no description" do
-      assert_not Country.new(name: 'Iceland').save
+    country = Country.new
+    country.name= 'Iceland'
+    country.description= ''
+    country.link= 'Learn More about Iceland'
+
+    country.save
+    refute country.valid?
   end
 
   test "Should not save countries with no link" do
-      assert_not Country.new(link: 'Activities available here').save
-  end
+    country = Country.new
+    country.name= 'Iceland'
+    country.description= 'Beautiful Country'
+    country.link= ''
 
-  # end
+    country.save
+    refute country.valid?
+  end
 end

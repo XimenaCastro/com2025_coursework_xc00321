@@ -11,16 +11,16 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
   #Test create a comment
   test "should create comment" do
     assert_difference('Comment.count') do
-      post ("/posts/"+@post.post.id.to_s+"/comments"), params: { comment: { name: @comment.name, comment: @comment.comment, post_id: @post.id}}
+      post ("/posts/"+@post.id.to_s+"/comments"), params: { comment: { name: @comment.name, comment: @comment.comment, post_id: @post.id}}
     end
-    assert_redirected_to ("/posts/"+@post.post.id.to_s+"/comments")
+    assert_redirected_to ("/posts/"+@post.id.to_s)
   end
 
   #test destroy comment
   test "Should delete (destroy) a particular comment" do
     assert_difference('Comment.count', -1) do
-      delete comment_url(@comment)
+      delete ("/posts/"+@post.id.to_s+"/comments/"+@comment.id.to_s)
     end
-    assert_redirected_to post_comments_url
+    assert_redirected_to ("/posts/"+@post.id.to_s)
   end
 end

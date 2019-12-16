@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_15_230027) do
+ActiveRecord::Schema.define(version: 2019_12_16_091702) do
 
   create_table "activities", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "country_id"
+    t.index ["country_id"], name: "index_activities_on_country_id"
   end
 
   create_table "comments", force: :cascade do |t|

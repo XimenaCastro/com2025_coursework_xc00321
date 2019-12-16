@@ -22,7 +22,7 @@ class ActivitiesControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Activity.count') do
       post activities_url, params: { activity: { name: @activity.name, description: @activity.description }}
     end
-    assert_redirected_to activities_url
+    assert_redirected_to root_path
   end
 
   #Test show the activity

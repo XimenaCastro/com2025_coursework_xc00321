@@ -1,6 +1,7 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="https://bulma.io">
+    <a class="navbar-item">
+
       <h1><%= link_to "planeahead", root_path %></h1>
     </a>
 
@@ -14,42 +15,65 @@
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
 
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Posts
+        </a>
 
-      <div class="navbar-item">
-        <%= link_to 'posts', posts_path %>
-      </div>
-
-      <div class="navbar-item">
-        <%= link_to 'new post', new_post_path %>
-      </div>
-
-      <div class="navbar-item">
-        <%= link_to 'All activties', activities_path %>
-      </div>
-
-      <div class="navbar-item">
-        <%= link_to 'Create a new activity', new_activity_path %>
-      </div>
-
-      <div class="navbar-item">
-        <%= link_to 'About Us', activities_path %>
-      </div>
-
-
-
-    </div>
-
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="buttons">
-          <a class="button is-primary">
-            <strong>Sign up</strong>
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+              <%= link_to 'posts', posts_path %>
           </a>
-          <a class="button is-light">
-            Log in
+          <a class="navbar-item">
+          <%= link_to 'new post', new_post_path %>
           </a>
+
+
         </div>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Activities
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+              <%= link_to 'Index of all Activties', activities_path %>
+          </a>
+          <a class="navbar-item">
+            <%= link_to 'Create a new activity', new_activity_path %>
+          </a>
+          <a class="navbar-item">
+            <!--<%#= link_to 'Edit your activity', edit_activity %> !-->
+          </a>
+          <hr class="navbar-divider">
+
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Countries
+          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item">
+                <%= link_to 'Index of all Countries', countries_path %>
+            </a>
+            <a class="navbar-item">
+              <%= link_to 'Add a new country to edit', new_country_path %>
+            </a>
+
+            <hr class="navbar-divider">
+
+          </div>
+          <a class="navbar-item">
+
+            <h1><%= link_to 'About Us', about_path %></h1>
+          </a>
+
       </div>
     </div>
+
+
   </div>
 </nav>

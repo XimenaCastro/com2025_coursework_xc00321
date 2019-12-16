@@ -29,8 +29,8 @@ class PostsController < ApplicationController
 	end
 	#Method to linkk to the about page
 
-	#def about
-	#end
+	def about
+	end
 
 	#Method to update the post
 	def update

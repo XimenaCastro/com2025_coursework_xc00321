@@ -20,7 +20,11 @@
 
 /*setting dark to the color*/
 $dark: #424652;
+$light-blue: #33E3FF;
 
+.section{
+	background-color: $light-blue;
+}
 /* all HTML elements that call the box-sizing will have a border box*/
 * {
 	box-sizing: border-box;

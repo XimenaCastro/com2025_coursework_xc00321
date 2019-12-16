@@ -17,11 +17,18 @@ class CommentTest < ActiveSupport::TestCase
 
 
   test "Should not save comments with no name" do
-      assert_not  Comment.new(comment: 'Your trip sounds awesome').save
-    end
+    comment = Comment.new(name: '', comment: 'Your trip sounds awesome')
+    post = Post.new(title: 'Hi', content: 'Bye')
+    comment.post = post
+    refute comment.valid?
+  end
 
   # assert not true
-  test "Should not save comments with no description" do
-      assert_not Comment.new(name: 'Xim').save
+  test "Should not save comments with no comment" do
+    comment = Comment.new(name: 'Xim', comment: '')
+    post = Post.new(title: 'Hi', content: 'Bye')
+    comment.post = post
+    refute comment.valid?
   end
+
 end

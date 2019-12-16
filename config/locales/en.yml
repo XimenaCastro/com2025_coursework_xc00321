@@ -31,7 +31,7 @@
 
 en:
   hello: "Hello world"
-  page_title: "Travel With Us"
+  page_title: "Plane Ahead"
   #Variables used for contacts
   contacts:
     title: Contact us
@@ -52,8 +52,7 @@ en:
     no_email: You must provide an email address
     email_sent: Thank you. We will be in touch with you shortly
 
-  #Variables used for countries
-  countries:
 
   #Variables used for activities
   activities:
+    

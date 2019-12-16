@@ -15,7 +15,8 @@ post 'request_contacts', to: 'contacts#request_contacts'
 #Gets the activities path for the activities index function
 get 'activities', to: 'activities#index'
 
-
+#get about us
+get 'about', to: 'posts#about'
 #generates resources for the rest of controllores
 resources :countries
 resources :activities

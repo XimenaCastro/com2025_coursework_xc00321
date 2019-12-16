@@ -1,5 +1,7 @@
 class ActivitiesController < ApplicationController
-before_action :find_activity, only: [:show, :destroy]
+before_action :find_activity, only: [:show, :update, :edit, :destroy]
+before_action :find_countries, only: [:index, :show, :new, :edit]
+
 #before_action :set_activity, only: [:create]
 	#method to show all the activities
 	def index
@@ -11,18 +13,18 @@ before_action :find_activity, only: [:show, :destroy]
 		@activity = Activity.new
 	end
 
-  #method for create a new activity
+	#method for create a new activity
 	def create
-		puts activity_params
 		@activity = Activity.new(activity_params)
-
-    #if the activity has been saved redirects to index of activities
-		if @activity.save
-			redirect_to activities_path
-		else
-			render 'new'
+	respond_to do |format|
+			if @activity.save
+				format.html { redirect_to root_path, notice: "made activity" }
+			else
+				format.html { render new }
+			end
 		end
 	end
+
 
   #Show method
 	def show
@@ -42,12 +44,14 @@ before_action :find_activity, only: [:show, :destroy]
 
   #Defining strong parameteres for activities
 	def activity_params
-		params.require(:activity).permit(:name, :description)
+		params.require(:activity).permit(:name, :description, :countries_id)
 	end
 
 	def find_activity
 	 	@activity = Activity.find(params[:id])
 	end
 
-
+	def find_countries
+        @countries = Country.all.order('created_at desc')
+  end
 end
