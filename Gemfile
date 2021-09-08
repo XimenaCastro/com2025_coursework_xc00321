@@ -53,7 +53,7 @@ group :development do
   gem 'web-console', '>= 3.3.0'
 
   #Make the errors look better
-  gem 'better_errors', '~> 2.5', '>= 2.5.1'
+  gem 'better_errors', '~> 2.8'
 
   # Guard is a command line tool to easily handle events on file system modifications
   	#gem 'guard', '~> 2.16', '>= 2.16.1'
